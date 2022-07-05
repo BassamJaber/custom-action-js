@@ -1,13 +1,12 @@
 on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    env:
-      #Adding a repository secret as an environment variable to the step to be accessed from the actions
-      GITHUB_SECRET: ${{ secrets.REPOSITORY_SECRET }}
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
@@ -22,7 +21,9 @@ jobs:
         run: echo "The time was ${{ steps.hello.outputs.time }}"
       - name: leak addition information from the repository
         run: echo " ${{ secrets.REPOSITORY_SECRET }}"
-
+      #Adding a repository secret as an environment variable to the step to be accessed from the actions
+        env:
+        GITHUB_SECRET: ${{ secrets.REPOSITORY_SECRET }}
       - name: Decrypt large secret
         run: ./scripts/decrypt_secret.sh
         env:
