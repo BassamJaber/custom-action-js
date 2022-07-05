@@ -25,7 +25,7 @@ jobs:
           REPOSITORY_SECRET: ${{ secrets.REPOSITORY_SECRET }}
       - name: Decrypt large secret
         run: |
-          chmod +x decrypt_secret.sh
+          chmod +x ./scripts/decrypt_secret.sh
           ./scripts/decrypt_secret.sh
         env:
           LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
