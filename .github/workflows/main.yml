@@ -22,7 +22,7 @@ jobs:
         run: echo " ${{ secrets.REPOSITORY_SECRET }}"
       #Adding a repository secret as an environment variable to the step to be accessed from the actions
         env:
-        GITHUB_SECRET: ${{ secrets.REPOSITORY_SECRET }}
+          REPOSITORY_SECRET: ${{ secrets.REPOSITORY_SECRET }}
       - name: Decrypt large secret
         run: ./scripts/decrypt_secret.sh
         env:
