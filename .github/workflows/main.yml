@@ -16,4 +16,6 @@ jobs:
           who-to-greet: 'Christian The Tech LORD!'
       # Use the output from the `hello` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"i
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: leak addition information from the repository
+        run: echo " ${{ secrets.REPOSITORY_SECRET }}"
