@@ -1,0 +1,24 @@
+{
+  "name": "custom-action",
+  "version": "1.0.0",
+  "description": "an example for a custom action written in Javascript with testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BassamJaber/custom-action-js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BassamJaber/custom-action-js/issues"
+  },
+  "homepage": "https://github.com/BassamJaber/custom-action-js#readme",
+  "dependencies": {
+    "@actions/core": "^1.9.0",
+    "@actions/github": "^5.0.3"
+  }
+}
