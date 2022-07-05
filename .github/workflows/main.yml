@@ -5,6 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+    env:
+      #Adding a repository secret as an environment variable to the step to be accessed from the actions
+      GITHUB_SECRET: ${{ secrets.REPOSITORY_SECRET }}
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
